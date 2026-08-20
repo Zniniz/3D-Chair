@@ -6,6 +6,10 @@ A Blender-modeled chair imported into a custom OpenGL pipeline, rendered as an i
 
 This project models a piece of furniture in Blender to real-world dimensions, exports it as a Wavefront OBJ file, and renders it in a from-scratch OpenGL 3.3 Core Profile pipeline — no third-party model-loading library. A hand-written parser reads the OBJ format directly, and the renderer supports live translation, rotation, and scaling via the keyboard, with the model always rotating in place around its own center regardless of where its geometry sits in object space.
 
+## Demo
+
+A full step-by-step walkthrough — covering the Blender modelling process (base mesh, UVs, procedural wood shader, lighting, final renders) and the OpenGL side (OBJ loading, wireframe rendering, translation/rotation/scaling controls) — is available in [`Demo/Demo.md`](Demo/Demo.md).
+
 ## Features
 
 - **Custom OBJ parser** — reads vertex positions and face data directly from the Wavefront format, with no dependency on Assimp or tinyobjloader
@@ -73,6 +77,9 @@ Adjust the include/library paths to match your local GLFW and GLEW installations
 ```
 .
 ├── README.md
+├── Demo/
+│   ├── Demo.md         # Full modelling + rendering walkthrough with screenshots
+│   └── images/         # Screenshots referenced by Demo.md
 └── src/
     ├── main.cpp        # Window/context setup, shaders, render loop, input handling
     ├── objloader.h     # OBJ loader interface
