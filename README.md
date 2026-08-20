@@ -36,7 +36,10 @@ This project models a piece of furniture in Blender to real-world dimensions, ex
 
 ### Build
 
+Source files live in `src/`. From the repository root:
+
 ```bash
+cd src
 g++ main.cpp objloader.cpp -o Chair.exe -Wall -Wextra \
   -I"<path-to-glfw>/include" \
   -I"<path-to-glew>/include" \
@@ -50,7 +53,7 @@ Adjust the include/library paths to match your local GLFW and GLEW installations
 
 ### Run
 
-`glew32.dll` must sit next to the executable at runtime.
+`glew32.dll` must sit next to the executable at runtime, and `Chair.obj` must be in the same working directory the program is launched from (`src/`, if following the steps above).
 
 ```bash
 ./Chair.exe
@@ -69,10 +72,12 @@ Adjust the include/library paths to match your local GLFW and GLEW installations
 
 ```
 .
-├── main.cpp        # Window/context setup, shaders, render loop, input handling
-├── objloader.h      # OBJ loader interface
-├── objloader.cpp    # OBJ parsing implementation
-├── Chair.obj        # Exported model geometry
-├── Chair.mtl        # Material file (unused by the wireframe renderer)
-└── Chair.blend      # Source Blender file
+├── README.md
+└── src/
+    ├── main.cpp        # Window/context setup, shaders, render loop, input handling
+    ├── objloader.h     # OBJ loader interface
+    ├── objloader.cpp   # OBJ parsing implementation
+    ├── Chair.obj       # Exported model geometry
+    ├── Chair.mtl       # Material file (unused by the wireframe renderer)
+    └── Chair.blend     # Source Blender file
 ```
